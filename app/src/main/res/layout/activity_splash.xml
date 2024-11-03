@@ -11,7 +11,7 @@
     tools:ignore="ExtraText">
 
     <!-- Logotipo de la aplicación -->
-<!--
+
     <ImageView
         android:id="@+id/logo"
         android:layout_width="411dp"
@@ -21,7 +21,8 @@
         android:padding="0dp"
 
         android:src="@drawable/logo" />
--->
+
+    <!--
     <Button
         android:id="@+id/startButton"
         android:layout_width="match_parent"
@@ -36,5 +37,5 @@
         android:minHeight="10dp"
         android:layout_marginTop="10dp"
         android:layout_marginBottom="0dp" />
-
+-->
 </LinearLayout>

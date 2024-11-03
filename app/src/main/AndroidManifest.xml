@@ -14,6 +14,7 @@
         android:supportsRtl="true"
         android:theme="@style/Theme.WorkWise"
         tools:targetApi="31">
+
         <activity android:name=".SplashActivity"
             android:exported="true">
             <intent-filter>
@@ -22,22 +23,14 @@
             </intent-filter>
         </activity>
 
-        <activity
-            android:name=".LoginActivity">
+        <!-- Actividad de inicio de sesión -->
+        <activity android:name=".LoginActivity" />
 
-        </activity>
+        <!-- Actividad de registro -->
+        <activity android:name=".SignUpActivity" />
 
-        <activity
-            android:name=".MainActivity"
-            android:exported="true"
-            android:theme="@style/Theme.WorkWise">
-            <intent-filter>
-                <action android:name="android.intent.action.MAIN" />
-
-                <category android:name="android.intent.category.LAUNCHER" />
-            </intent-filter>
-        </activity>
 
     </application>
 
 </manifest>
+

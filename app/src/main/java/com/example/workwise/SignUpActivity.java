@@ -18,59 +18,51 @@ import okhttp3.Request;
 import okhttp3.RequestBody;
 import okhttp3.Response;
 
-public class LoginActivity extends AppCompatActivity {
+public class SignUpActivity extends AppCompatActivity {
 
     private EditText usernameEditText;
+    private EditText emailEditText;
     private EditText passwordEditText;
-    private Button loginButton;
-    private Button createAccountButton;
+    private Button registerButton;
     private OkHttpClient client;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
-        setContentView(R.layout.activity_login);
+        setContentView(R.layout.activity_signup);
 
-        // Inicializar los elementos de la interfaz de usuario
+        // Inicializar campos de texto y botón
         usernameEditText = findViewById(R.id.username);
+        emailEditText = findViewById(R.id.email);
         passwordEditText = findViewById(R.id.password);
-        loginButton = findViewById(R.id.login_button);
-        createAccountButton = findViewById(R.id.btnCreateAccount);
+        registerButton = findViewById(R.id.register_button);
         client = new OkHttpClient();
 
-        // Listener para el botón de inicio de sesión
-        loginButton.setOnClickListener(new View.OnClickListener() {
+        // Configurar el listener para el botón de registro
+        registerButton.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
                 String username = usernameEditText.getText().toString();
+                String email = emailEditText.getText().toString();
                 String password = passwordEditText.getText().toString();
-                loginUser(username, password);
-            }
-        });
-
-        // Listener para el botón "Crear cuenta"
-        createAccountButton.setOnClickListener(new View.OnClickListener() {
-            @Override
-            public void onClick(View v) {
-                // Redirigir a la actividad de registro
-                Intent intent = new Intent(LoginActivity.this, SignUpActivity.class);
-                startActivity(intent);
+                registerUser(username, email, password);
             }
         });
     }
 
-    private void loginUser(String username, String password) {
-        // Crear JSON con las credenciales de inicio de sesión
+    private void registerUser(String username, String email, String password) {
+        // Crear JSON con los datos de registro
         JSONObject json = new JSONObject();
         try {
             json.put("username", username);
+            json.put("email", email);
             json.put("password", password);
         } catch (JSONException e) {
             e.printStackTrace();
         }
 
-        // Configurar la solicitud de inicio de sesión
-        String url = "http://10.0.2.2:5000/login"; // Cambia la IP si usas un dispositivo físico
+        // Configurar la solicitud de registro
+        String url = "http://10.0.2.2:5000/register"; // Cambia a la IP del servidor si usas un dispositivo físico
         RequestBody body = RequestBody.create(json.toString(), MediaType.parse("application/json; charset=utf-8"));
         Request request = new Request.Builder()
                 .url(url)
@@ -81,20 +73,19 @@ public class LoginActivity extends AppCompatActivity {
         client.newCall(request).enqueue(new Callback() {
             @Override
             public void onFailure(Call call, IOException e) {
-                runOnUiThread(() -> Toast.makeText(LoginActivity.this, "Error de red", Toast.LENGTH_SHORT).show());
+                runOnUiThread(() -> Toast.makeText(SignUpActivity.this, "Error de red", Toast.LENGTH_SHORT).show());
             }
 
             @Override
             public void onResponse(Call call, Response response) throws IOException {
                 if (response.isSuccessful()) {
-                    runOnUiThread(() -> Toast.makeText(LoginActivity.this, "Inicio de sesión exitoso", Toast.LENGTH_SHORT).show());
-                    // Aquí puedes redirigir al usuario a otra actividad, como el dashboard o página principal
-                    // Por ejemplo:
-                    Intent intent = new Intent(LoginActivity.this, MainActivity.class); // Cambia a la actividad de destino
+                    runOnUiThread(() -> Toast.makeText(SignUpActivity.this, "Registro exitoso", Toast.LENGTH_SHORT).show());
+                    // Redirigir al usuario a LoginActivity tras el registro exitoso
+                    Intent intent = new Intent(SignUpActivity.this, LoginActivity.class);
                     startActivity(intent);
-                    finish(); // Finaliza LoginActivity para que no vuelva al hacer "back"
+                    finish(); // Termina la actividad actual para evitar regresar aquí
                 } else {
-                    runOnUiThread(() -> Toast.makeText(LoginActivity.this, "Credenciales incorrectas", Toast.LENGTH_SHORT).show());
+                    runOnUiThread(() -> Toast.makeText(SignUpActivity.this, "Error en el registro", Toast.LENGTH_SHORT).show());
                 }
             }
         });

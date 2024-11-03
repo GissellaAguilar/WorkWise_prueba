@@ -1,35 +1,50 @@
-<?xml version="1.0" encoding="utf-8"?>
-<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
-    xmlns:tools="http://schemas.android.com/tools"
+<!-- activity_signup.xml -->
+<LinearLayout
+    xmlns:android="http://schemas.android.com/apk/res/android"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
     android:orientation="vertical"
     android:padding="60dp"
-    tools:ignore="ExtraText"
     android:background="@color/colorAccent">
 
     <TextView
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:text="Workwise | Login"
-        android:textSize="36sp"
+        android:text="Workwise | SignUp"
+        android:textSize="25sp"
         android:textStyle="bold"
         android:layout_marginBottom="15dp"
         android:gravity="center"
+        android:layout_marginTop="15dp"
         android:background="@android:color/white" />
 
     <EditText
         android:id="@+id/username"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        android:hint="Nombre de Usuario"
-        android:textSize="25sp"
+        android:hint="Nombre de usuario"
+        android:backgroundTint="@android:color/black"
+        android:textColor="@color/black"
+        android:textSize="15sp"
         android:textStyle="bold"
         android:padding="25dp"
         android:minHeight="50dp"
         android:layout_marginTop="15dp"
-        android:layout_marginBottom="15dp"
-        android:background="@android:color/white" />
+        android:layout_marginBottom="15dp" />
+
+    <EditText
+        android:id="@+id/email"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:hint="Correo electrónico"
+        android:inputType="textEmailAddress"
+        android:textColor="@color/black"
+        android:textSize="15sp"
+        android:textStyle="bold"
+        android:padding="25dp"
+        android:minHeight="50dp"
+        android:layout_marginTop="15dp"
+        android:layout_marginBottom="15dp" />
 
     <EditText
         android:id="@+id/password"
@@ -37,41 +52,21 @@
         android:layout_height="wrap_content"
         android:hint="Contraseña"
         android:inputType="textPassword"
-        android:textSize="25sp"
-        android:textStyle="bold"
-        android:padding="25dp"
-        android:minHeight="50dp"
-        android:layout_marginTop="15dp"
-        android:layout_marginBottom="15dp"
-        android:background="@android:color/white" />
-
-    <Button
-        android:id="@+id/login_button"
-        android:layout_width="match_parent"
-        android:layout_height="wrap_content"
-        android:text="Iniciar Sesión"
-        android:backgroundTint="@android:color/black"
-        android:textColor="@color/white"
-        android:textSize="25sp"
-        android:textStyle="bold"
-        android:padding="25dp"
-        android:minHeight="50dp"
-        android:layout_marginTop="15dp"
-        android:layout_marginBottom="15dp" />
-
-    <Button
-        android:id="@+id/btnCreateAccount"
-        android:layout_width="match_parent"
-        android:layout_height="wrap_content"
-        android:text="Crear cuenta"
-        android:backgroundTint="@android:color/white"
         android:textColor="@color/black"
+        android:textSize="15sp"
         android:textStyle="bold"
         android:padding="25dp"
         android:minHeight="50dp"
         android:layout_marginTop="15dp"
         android:layout_marginBottom="15dp" />
 
+    <Button
+        android:id="@+id/register_button"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:text="Registrar"
+        android:layout_marginTop="35dp"
+        android:layout_marginBottom="30dp"
+        android:backgroundTint="@android:color/black"/>
 
 </LinearLayout>
-
