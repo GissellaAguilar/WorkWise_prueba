@@ -57,7 +57,10 @@ public class LoginActivity extends AppCompatActivity {
                 startActivity(intent);
             }
         });
+
+
     }
+
 
     private void loginUser(String username, String password) {
         // Crear JSON con las credenciales de inicio de sesión

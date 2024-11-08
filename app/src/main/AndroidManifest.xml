@@ -14,23 +14,25 @@
         android:supportsRtl="true"
         android:theme="@style/Theme.WorkWise"
         tools:targetApi="31">
-
-        <activity android:name=".SplashActivity"
+        <activity
+            android:name=".SplashActivity"
             android:exported="true">
             <intent-filter>
                 <action android:name="android.intent.action.MAIN" />
+
                 <category android:name="android.intent.category.LAUNCHER" />
             </intent-filter>
-        </activity>
-
-        <!-- Actividad de inicio de sesión -->
-        <activity android:name=".LoginActivity" />
-
-        <!-- Actividad de registro -->
+        </activity> <!-- Actividad de inicio de sesión -->
+        <activity android:name=".LoginActivity" /> <!-- Actividad de registro -->
         <activity android:name=".SignUpActivity" />
-
+        <activity android:name=".MainActivity"/>
+        <activity
+            android:name=".TaskDetailActivity"
+            android:exported="false" />
+        <activity
+            android:name=".TaskListActivity"
+            android:exported="false" />
 
     </application>
 
 </manifest>
-
