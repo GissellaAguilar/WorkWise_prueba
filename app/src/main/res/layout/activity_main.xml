@@ -5,58 +5,57 @@
     android:layout_width="match_parent"
     android:layout_height="match_parent"
     android:orientation="vertical"
-    android:gravity="center"
+    android:background="@drawable/logito1"
     android:padding="20dp"
-    android:background="@color/colorAccent">
+    >
 
-    <ImageView
-        android:id="@+id/imageView"
-        android:layout_width="100dp"
-        android:layout_height="100dp"
-        android:layout_alignParentStart="true"
-        android:layout_alignParentTop="true"
-        android:layout_marginStart="-130dp"
-        android:layout_marginTop="-170dp"
-        android:minHeight="50dp"
-        android:padding="-10dp"
-        tools:srcCompat="@tools:sample/avatars" />
 
     <TextView
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:text="Workwise | Selección de tareas"
+        android:text="¡Bienvenido/a!"
         android:textSize="25sp"
         android:textStyle="bold"
         android:layout_marginBottom="15dp"
         android:layout_marginTop="50dp"
-        android:gravity="center"
-        android:background="@android:color/white" />
-    <Button
-        android:id="@+id/dailyTasksButton"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:text="Tareas Diarias"
-        android:textColor="@color/white"
-        android:textSize="20sp"
-        android:textStyle="bold"
-        android:padding="20dp"
-        android:minHeight="20dp"
-        android:layout_marginTop="20dp"
-        android:layout_marginBottom="15dp"
-        android:backgroundTint="@android:color/black" />
+        android:gravity="center" />
 
-    <Button
-        android:id="@+id/weeklyTasksButton"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:text="Tareas Semanales"
-        android:textColor="@color/white"
-        android:textSize="20sp"
-        android:textStyle="bold"
-        android:padding="20dp"
-        android:minHeight="20dp"
-        android:layout_marginTop="20dp"
-        android:layout_marginBottom="15dp"
-        android:backgroundTint="@android:color/black"/>
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="188dp"
+        android:orientation="vertical">
+
+        <CalendarView
+            android:id="@+id/calendarView2"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content" />
+    </LinearLayout>
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="200dp"
+        android:orientation="vertical">
+
+        <Button
+            android:id="@+id/button5"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:backgroundTint="@android:color/holo_purple"
+            android:text="Hoy" />
+
+        <Button
+            android:id="@+id/button6"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:backgroundTint="@android:color/holo_purple"
+            android:text="Programado" />
+
+        <Button
+            android:id="@+id/button9"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:backgroundTint="@android:color/holo_purple"
+            android:text="Semanal" />
+    </LinearLayout>
 
 </LinearLayout>

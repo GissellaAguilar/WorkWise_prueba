@@ -18,10 +18,10 @@
             android:name=".Principal"
             android:exported="false" />
         <activity
-            android:name=".loginprueba"
+            android:name=".SplashActivity"
             android:exported="false" />
         <activity
-            android:name=".SplashActivity"
+            android:name=".loginprueba"
             android:exported="true">
             <intent-filter>
                 <action android:name="android.intent.action.MAIN" />
@@ -33,10 +33,10 @@
         <activity android:name=".SignUpActivity" />
         <activity android:name=".MainActivity" />
         <activity
-            android:name=".TaskDetailActivity"
+            android:name=".TaskListActivity"
             android:exported="false" />
         <activity
-            android:name=".TaskListActivity"
+            android:name=".TaskDetailActivity"
             android:exported="false" />
     </application>
 

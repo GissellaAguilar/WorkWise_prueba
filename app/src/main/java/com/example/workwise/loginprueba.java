@@ -32,11 +32,13 @@ public class loginprueba extends AppCompatActivity {
                 if (username.getText().toString().equals("user") && password.getText().toString().equals("1234")) {
                     Intent intent = new Intent(loginprueba.this, MainActivity.class);
                     startActivity(intent);
+                    finish();
                     Toast.makeText(loginprueba.this, "Login Successful!", Toast.LENGTH_SHORT).show();
                 } else {
                     Toast.makeText(loginprueba.this, "Login Failed!", Toast.LENGTH_SHORT).show();
                 }
             }
         });
+
     }
 }

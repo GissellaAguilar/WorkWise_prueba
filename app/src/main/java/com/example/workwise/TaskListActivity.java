@@ -16,8 +16,12 @@ public class TaskListActivity extends AppCompatActivity {
 
         ListView taskListView = findViewById(R.id.taskListView);
         String taskType = getIntent().getStringExtra("taskType");
-
+        if (taskType == null) {
+            taskType = ""; // O establece un valor predeterminado
+        }
         // Datos de ejemplo de tareas
+
+
         String[] tasks = taskType.equals("daily") ?
                 new String[]{"Tarea 1", "Tarea 2", "Tarea 3"} :
                 new String[]{"Tarea 4", "Tarea 5", "Tarea 6"};
