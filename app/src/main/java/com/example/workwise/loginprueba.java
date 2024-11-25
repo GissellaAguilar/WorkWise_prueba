@@ -15,6 +15,7 @@ public class loginprueba extends AppCompatActivity {
     EditText username;
     EditText password;
     Button loginButton;
+    Button signup_btn;
 
 
     @Override
@@ -25,6 +26,8 @@ public class loginprueba extends AppCompatActivity {
         username = findViewById(R.id.username);
         password = findViewById(R.id.password);
         loginButton = findViewById(R.id.loginButton);
+        signup_btn = findViewById(R.id.signup_btn);
+
 
         loginButton.setOnClickListener(new View.OnClickListener() {
             @Override
@@ -40,5 +43,12 @@ public class loginprueba extends AppCompatActivity {
             }
         });
 
+        signup_btn.setOnClickListener(new View.OnClickListener() {;
+            @Override
+            public void onClick(View view) {
+                Intent intent = new Intent(loginprueba.this, SignUpActivity.class);
+                startActivity(intent);
+            }
+        });
     }
 }
